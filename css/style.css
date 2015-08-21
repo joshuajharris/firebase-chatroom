@@ -1,5 +1,7 @@
 #chat-log {
   width: 100%;
+  padding: 10px;
   border: 1px solid #000;
-  min-height: 250px;
+  height: 300px;
+  overflow-y: auto;
 }
