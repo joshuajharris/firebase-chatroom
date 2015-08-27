@@ -15,6 +15,7 @@ $(document).ready(function(){
         "</div>"
       );
     });
+    $('#chat-log').animate({ scrollTop: $('#chat-log')[0].scrollHeight}, 1000);
   });
   
   $('#message').keypress(function(e) {
