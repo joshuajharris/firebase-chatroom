@@ -35,7 +35,7 @@ $(document).ready(function(){
                        currentDate.getMinutes() + ":" +
                        currentDate.getSeconds();
             //ref.push({author: $('#username').val(), timestamp: time, text:$('#message').val()});
-            ref.push({author: github.username, timestamp: time, text:$('#message').val()});
+            ref.push({author: authData.github.username, timestamp: time, text:$('#message').val()});
             $('#message').val('');
             $('#errors').empty();
           } else {
