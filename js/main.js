@@ -28,7 +28,7 @@ $(document).ready(function(){
   
   $('#message').keypress(function(e) {
     if (e.charCode === 13) {
-      if($("#username").val().length > 0) {
+      if($("#message").val().length > 0) {
         var currentDate = new Date();
         var time = //currentDate.getDate() + "/" +
                    //(currentDate.getMonth() + 1) + "/" +
