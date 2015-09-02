@@ -1,6 +1,8 @@
 var refUrl = "https://joshuajharris-chat.firebaseio.com/messages";  
 var ref = new Firebase(refUrl);
 
+var ghUsername;
+
 $(document).ready(function(){
 
   ref.authWithOAuthPopup("github", function(error, authData) {
@@ -8,6 +10,7 @@ $(document).ready(function(){
       console.log("Login Failed!", error);
     } else {
       console.log("Authenticated successfully with payload:", authData);
+      ghUsername = authData.github.username;
     }
   });
 
@@ -37,7 +40,7 @@ $(document).ready(function(){
                    currentDate.getMinutes() + ":" +
                    currentDate.getSeconds();
         //ref.push({author: $('#username').val(), timestamp: time, text:$('#message').val()});
-        ref.push({author: authData.github.username, timestamp: time, text:$('#message').val()});
+        ref.push({author: ghUsername, timestamp: time, text:$('#message').val()});
         $('#message').val('');
         $('#errors').empty();
       } else {
